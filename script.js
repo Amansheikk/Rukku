@@ -1,5 +1,4 @@
 // --- State Management ---
-let page2YesCount = 0;
 let page2NoCount = 0;
 
 // --- DOM Elements ---
@@ -15,7 +14,6 @@ const stars = document.getElementById('stars');
 // Page 2 specific elements
 const btnYes2 = document.getElementById('btn-yes-2');
 const btnNo2 = document.getElementById('btn-no-2');
-const btnEeeeee = document.getElementById('btn-eeeeee');
 const page2BtnsContainer = document.getElementById('page2-btns');
 
 // --- Initialization ---
@@ -64,32 +62,31 @@ function goToPage(pageId) {
 
 // --- Page 2 Logic ---
 btnYes2.addEventListener('click', () => {
-    page2YesCount++;
-    if (page2YesCount < 3) {
-        showModal("Itna jaldi toh call pe nahi maanti 😂❤️");
-    } else {
+    // 1. Show the playful popup
+    showModal("Itna jaldi toh call pe nahi maanti 😂❤️");
+    
+    // 2. Wait 2.5 seconds, then automatically close modal and move to Page 3
+    setTimeout(() => {
+        closeModal();
         goToPage('page3');
-    }
+    }, 2500);
 });
 
 btnNo2.addEventListener('click', () => {
     page2NoCount++;
-    if (page2NoCount >= 3) {
-        // Remove NO completely, show eeeeee
-        page2BtnsContainer.classList.add('hidden');
-        btnEeeeee.classList.remove('hidden');
+    
+    if (page2NoCount >= 6) {
+        // After the 6th NO click: Remove NO button, update YES button text
+        btnNo2.classList.add('hidden');
+        btnYes2.innerHTML = 'Yes ❤️';
     } else {
-        // "Reload" feeling by shaking the card briefly
+        // "Reload" feeling by shaking the card briefly for clicks 1 to 5
         const page2 = document.getElementById('page2');
         page2.style.transform = 'translateY(0) scale(0.98)';
         setTimeout(() => {
             page2.style.transform = 'translateY(0) scale(1)';
         }, 150);
     }
-});
-
-btnEeeeee.addEventListener('click', () => {
-    goToPage('page3');
 });
 
 // --- Custom Modal ---
