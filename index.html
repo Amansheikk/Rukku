@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-gradient" id="main-bg"></div>
+    <div class="stars-container" id="stars"></div>
+    <div id="particles-container"></div>
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <button id="music-toggle" class="glass-btn icon-btn">
+        <i class="fas fa-music"></i>
+    </button>
+    <audio id="bg-music" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/16/audio_0dd524a8fc.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="modal-overlay" id="custom-modal">
+        <div class="modal-content glass-card">
+            <p id="modal-text" class="handwritten"></p>
+            <button class="primary-btn" onclick="closeModal()">Okay 🥺</button>
+        </div>
+    </div>
+
+    <main class="app-container">
+        
+        <section id="page1" class="page active glass-card">
+            <h1 class="handwritten glow-text large-text">I'm really sorry ❤️</h1>
+            <div class="typing-text-container">
+                <p>I know I hurt you.</p>
+                <p>I'm genuinely sorry.</p>
+                <p>You mean everything to me.</p>
+            </div>
+            <button class="primary-btn mt-2" onclick="goToPage('page2')">OK</button>
+        </section>
+
+        <section id="page2" class="page glass-card">
+            <h2 class="modern-heading">Did you forgive me?</h2>
+            <div class="btn-group" id="page2-btns">
+                <button class="primary-btn" id="btn-yes-2">YES</button>
+                <button class="secondary-btn" id="btn-no-2">NO</button>
+            </div>
+            <button class="primary-btn hidden" id="btn-eeeeee">eeeeee</button>
+        </section>
+
+        <section id="page3" class="page glass-card">
+            <h1 class="handwritten glow-text massive-text pulse">I Love You ❤️</h1>
+            <button class="primary-btn mt-2" onclick="goToPage('page4')">OK</button>
+        </section>
+
+        <section id="page4" class="page glass-card">
+            <h2 class="modern-heading">Do you love me?</h2>
+            <div class="btn-group">
+                <button class="primary-btn" onclick="goToPage('pageFinal')">YES</button>
+                <button class="secondary-btn" onclick="goToPage('page5')">NO</button>
+            </div>
+        </section>
+
+        <section id="page5" class="page glass-card">
+            <h2 class="handwritten glow-text medium-text">I love you a lot ❤️</h2>
+            <p class="modern-heading mt-1">Do you love me?</p>
+            <div class="btn-group">
+                <button class="primary-btn" onclick="goToPage('pageFinal')">YES</button>
+                <button class="secondary-btn" onclick="goToPage('page6')">NO</button>
+            </div>
+        </section>
+
+        <section id="page6" class="page glass-card">
+            <h2 class="handwritten medium-text">Oye Darling 🥺</h2>
+            <p class="modern-heading mt-1">Please...<br>Do you love me?</p>
+            <div class="btn-group">
+                <button class="primary-btn" onclick="goToPage('pageFinal')">YES</button>
+                <button class="secondary-btn" onclick="goToPage('page7')">NO</button>
+            </div>
+        </section>
+
+        <section id="page7" class="page glass-card border-glow">
+            <h1 class="handwritten glow-text large-text shake">DO YOU LOVE ME? ❤️</h1>
+            <div class="btn-group mt-2">
+                <button class="primary-btn massive-btn pulse" onclick="goToPage('pageFinal')">YES</button>
+            </div>
+        </section>
+
+        <section id="pageFinal" class="page transparent-card">
+            <h1 class="handwritten massive-text text-pop">AAAWWWNNNN ❤️</h1>
+            <div class="final-text-block">
+                <p>Baby...</p>
+                <p>I knew it ❤️</p>
+                <p>I love you too.</p>
+                <p class="handwritten medium-text mt-1">Umah Umah 😘❤️</p>
+            </div>
+            <h3 class="modern-heading glow-text mt-2">Forever & Always ❤️</h3>
+            <div class="couple-silhouette">
+                <svg viewBox="0 0 100 100" class="silhouette-svg">
+                    <path d="M40,60 C30,60 25,70 25,80 L25,100 L75,100 L75,80 C75,70 70,60 60,60 C55,60 55,50 55,45 C60,40 60,30 50,30 C40,30 40,40 45,45 C45,50 45,60 40,60 Z" fill="#1a0b1c"/>
+                    <circle cx="43" cy="25" r="8" fill="#1a0b1c"/>
+                    <circle cx="57" cy="23" r="7" fill="#1a0b1c"/>
+                </svg>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
